@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Categorizer
 {
-    public partial class Form1 : Form
+    public partial class Sonuc : Form
     {
-        public Form1()
+        public Sonuc()
         {
             InitializeComponent();
+        }
+
+        private void backbtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new kumeler().ShowDialog();
         }
     }
 }
