@@ -73,6 +73,7 @@
       <DependentUpon>Sonuc.cs</DependentUpon>
       <Link>Sonuc.Designer.cs</Link>
     </Compile>
+    <Compile Include="SingleTone.cs" />
     <EmbeddedResource Include="..\..\..\..\..\Desktop\Yeni klasör\ElemanListele.resx">
       <DependentUpon>ElemanListele.cs</DependentUpon>
       <Link>ElemanListele.resx</Link>
