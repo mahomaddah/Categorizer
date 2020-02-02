@@ -16,5 +16,31 @@ namespace Categorizer
         {
             InitializeComponent();
         }
+
+        private void Sonuc_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Sonuc().ShowDialog();
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ElemanListele().ShowDialog();
+        }
+
+        private void ListeleBtn_Click(object sender, EventArgs e)
+        {
+            if (checkedListBoxSets.SelectedItems.Count==0) { MessageBox.Show("hic bir sey secili degil"); }
+           
+
+            this.Hide();
+            new ElemanListele().ShowDialog();
+        }
+
+        private void DelBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
