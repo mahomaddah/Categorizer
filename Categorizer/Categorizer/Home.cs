@@ -19,8 +19,16 @@ namespace Categorizer
 
         private void Sonuc_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Sonuc().ShowDialog();
+            if (checkedSayisi() < 1) { Hata.HataGoster(2); }
+            else
+            {
+                this.Hide();
+                new Sonuc().ShowDialog();
+
+
+
+            }
+
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -28,19 +36,38 @@ namespace Categorizer
             this.Hide();
             new ElemanListele().ShowDialog();
         }
-
+        private short checkedSayisi()
+        {
+            short sonuc =0;
+            foreach(string s in checkedListBoxSets.CheckedItems)
+            {
+                sonuc++;
+            }
+            return sonuc;
+        }
         private void ListeleBtn_Click(object sender, EventArgs e)
         {
-            if (checkedListBoxSets.SelectedItems.Count==0) { MessageBox.Show("hic bir sey secili degil"); }
-           
+            if (checkedSayisi() != 1) { Hata.HataGoster(1); }
+            else
+            {
+                this.Hide();
+                new ElemanListele().ShowDialog();
 
-            this.Hide();
-            new ElemanListele().ShowDialog();
+
+
+            }
         }
 
         private void DelBtn_Click(object sender, EventArgs e)
         {
-            
+            if (checkedSayisi() < 1) { Hata.HataGoster(2); }
+            else
+            {
+             
+
+
+
+            }
         }
     }
 }

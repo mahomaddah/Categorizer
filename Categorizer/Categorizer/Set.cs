@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Categorizer
 {
-    class Set
+    public class Set
     {
         public string SetName { get; set; }
         public List<Element> elements { get; set;}
