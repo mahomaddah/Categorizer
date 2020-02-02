@@ -15,6 +15,25 @@ namespace Categorizer
         public Home()
         {
             InitializeComponent();
+            SingleTone sets = SingleTone.Instance();
+            sets.Kumeler = new List<Set>();
+            Set set = new Set();
+            set.elements = new List<Element>();
+            Element element = new Element();
+            Element element2 = new Element();
+            sets.TasiyiciNesne = new Set();
+            sets.TasiyiciNesne.elements = new List<Element>();
+
+            element.Name = "abdulmecit";
+            element2.Name = "abdulhemit";
+            set.SetName = "pezevenkler";
+
+            set.elements.Add(element);
+            set.elements.Add(element2);
+            sets.Kumeler.Add(set);
+            sets.TasiyiciNesne.elements.Add(element2);
+            sets.TasiyiciNesne.elements.Add(element);
+
         }
 
         private void Sonuc_Click(object sender, EventArgs e)
@@ -32,20 +51,8 @@ namespace Categorizer
         }
 
         private void addBtn_Click(object sender, EventArgs e)
-        {
-            SingleTone sets = SingleTone.Instance();
-            sets.Kumeler = new List<Set>();
-            Element element = new Element();
-            Element element2 = new Element();
-            Set set = new Set();
-            set.elements = new List<Element>();
-            element.Name = "abdulmecit";
-            element2.Name = "abdulhemit";
-            set.SetName = "pezevenkler";
-            
-            set.elements.Add(element);
-            set.elements.Add(element2);
-            sets.Kumeler.Add(set);
+        {           
+                                 
             this.Hide();
             new ElemanListele().ShowDialog();
         }
