@@ -13,6 +13,7 @@ namespace Categorizer
     public partial class Home : Form
     {
         SingleTone sets = SingleTone.Instance();
+        
 
         public Home()
         {
@@ -130,14 +131,15 @@ namespace Categorizer
                 sets.Kumeler = new List<Set>();
             if (sets.TasiyiciNesne == null)
                 sets.TasiyiciNesne = new Set();
-            if(sets.TasiyiciNesne.elements==null)
-            sets.TasiyiciNesne.elements = new List<Element>();
+            if (sets.TasiyiciNesne.elements == null)
+                sets.TasiyiciNesne.elements = new List<Element>();
 
             Set set = new Set();
             Set set2 = new Set();
+
             set.elements = new List<Element>();
             set2.elements = new List<Element>();
-            
+
             //veri aktarma basla
             Element element = new Element();
             Element element2 = new Element();
@@ -145,7 +147,7 @@ namespace Categorizer
             Element element4 = new Element();
             Element element5 = new Element();
             Element element6 = new Element();
-            
+
             element.Name = "Post nazal akıntı";
             element2.Name = "Astım";
             element3.Name = "GÖR";
@@ -155,7 +157,6 @@ namespace Categorizer
 
             element6.Name = "Sigara";
 
-            
             /*    
                 ortallar:
                 • Post nazal akıntı
@@ -195,15 +196,15 @@ namespace Categorizer
             set2.elements.Add(element4);
             set2.elements.Add(element6);
             //veri aktarma bitis
-            bool tutu = false;
-            if (tutu==false)
+
+            if (sets.Kumeler.Count == 0)//gunceleme olayi yok sadece vei yoksa kumelerde veri ekler varsa ve eksikse olayini ekle
             {
                 sets.Kumeler.Add(set);
                 sets.Kumeler.Add(set2);
-                tutu = true;
             }
-            
-           
+
+
+
             checkedListBoxSets.Items.Clear();
             
             foreach (Set s in sets.Kumeler)
