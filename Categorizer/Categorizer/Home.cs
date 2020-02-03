@@ -12,10 +12,11 @@ namespace Categorizer
 {
     public partial class Home : Form
     {
+        SingleTone sets = SingleTone.Instance();
         public Home()
         {
             InitializeComponent();
-            SingleTone sets = SingleTone.Instance();
+            
             sets.Kumeler = new List<Set>();
             Set set = new Set();
             set.elements = new List<Element>();
@@ -35,7 +36,25 @@ namespace Categorizer
             sets.TasiyiciNesne.elements.Add(element);
 
         }
+        private void sonucHesapla()
+        {
+            List<Set> tempListe = new List<Set>();
+            Set tempSet;
 
+
+            foreach (string s in checkedListBoxSets.CheckedItems)
+            {
+               tempSet = new Set();
+               tempSet= sets.Kumeler.Find(x => x.SetName == s);
+               tempListe.Add(tempSet);
+            }int i = 0;
+            foreach(Set x in tempListe)
+            {
+                i++;
+                for (int j; j<tempListe[i+1].elements.Count;j++)
+               /// sonuca esit tempListe[i].elements.FindAll(a => a.Name == tempListe[i + 1].);
+            }
+        }
         private void Sonuc_Click(object sender, EventArgs e)
         {
             if (checkedSayisi() < 1) { Hata.HataGoster(2); }
