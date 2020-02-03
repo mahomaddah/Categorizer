@@ -117,7 +117,8 @@ namespace Categorizer
             if (checkedSayisi() < 1) { Hata.HataGoster(2); }
             else
             {
-             
+                
+                    
 
 
 
@@ -208,8 +209,8 @@ namespace Categorizer
             foreach (Set s in sets.Kumeler)
             {
                checkedListBoxSets.Items.Add(s.SetName);
-            }
-
+            }          
+            
         }
     }
 }
