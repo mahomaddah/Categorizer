@@ -25,19 +25,30 @@ namespace Categorizer
             List<Set> tempListe = new List<Set>();
             Set tempSet;
 
-
+            int i = 1;
+            string sorguIsmi = "";
             foreach (string s in checkedListBoxSets.CheckedItems)
             {
+                sorguIsmi += "("+s+")";
+                if (i < checkedListBoxSets.CheckedItems.Count)
+                {
+                    sorguIsmi += " n ";
+                }
+                else
+                {
+                    sorguIsmi += " :";
+                }
+                i++;
                tempSet = new Set();
                tempSet= sets.Kumeler.Find(x => x.SetName == s);
                tempListe.Add(tempSet);
             }
             tempSet = null;
             tempSet = new Set();
-            bool i = false;
+            bool m = false;
             foreach(Set x in tempListe)
             {
-                if (i == false)
+                if (m == false)
                 {
                     tempSet = x;
                 }
@@ -45,9 +56,12 @@ namespace Categorizer
                 {
                     tempSet = KesisimAl(x, tempSet);
                 }
-                i = true;
+                m = true;
             }
+            tempSet.SetName = sorguIsmi;
             sets.TasiyiciNesne = tempSet;
+            
+            
         }
         private Set KesisimAl(Set bir,Set iki)
         {
