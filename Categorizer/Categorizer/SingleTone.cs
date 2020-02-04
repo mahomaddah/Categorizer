@@ -24,5 +24,6 @@ namespace Categorizer
             return instance;
         }
 
+       
     }
 }
