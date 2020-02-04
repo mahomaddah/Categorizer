@@ -147,6 +147,7 @@ namespace Categorizer
             {
                 foreach (string s in checkedListBoxSets.CheckedItems)
                 sets.Kumeler.RemoveAll(x => x.SetName == s);
+                KayitEt();
                 checkBoxYenile();
             }
         }
@@ -166,67 +167,7 @@ namespace Categorizer
             set2.elements = new List<Element>();
 
             //veri aktarma basla
-            Element element = new Element();
-            Element element2 = new Element();
-            Element element3 = new Element();
-            Element element4 = new Element();
-            Element element5 = new Element();
-            Element element6 = new Element();
-
-            element.Name = "Post nazal akıntı";
-            element2.Name = "Astım";
-            element3.Name = "GÖR";
-            element4.Name = "ACE inhibitörleri";
-
-            element5.Name = "Eosinofilik bronşit";
-
-            element6.Name = "Sigara";
-
-            /*    
-                ortallar:
-                • Post nazal akıntı
-                • Astım
-                • GÖR
-                • ACE inhibitörleri
-
-                Kronik öksürük nedenleri
-                
-                • Eosinofilik bronşit
-                • Bronşektazi
-                • Malign/benign akciğer tm leri
-                • Tüberküloz                             
-
-                Nonprodüktif öksürük nedenleri
-                
-                • Sigara                                             
-                • Viral ÜSYE
-                • Plevra hastalıkları
-                • Mediasten hastalıkları
-                • İAH
-                • Dış kulak yolu hastalıkları           
-             */
-
-            set.SetName = "Kronik öksürük nedenleri";
-            set2.SetName = "Nonprodüktif öksürük nedenleri";
-
-            set.elements.Add(element);
-            set.elements.Add(element2);
-            set.elements.Add(element3);
-            set.elements.Add(element4);
-            set.elements.Add(element5);
-
-            set2.elements.Add(element);
-            set2.elements.Add(element2);
-            set2.elements.Add(element3);
-            set2.elements.Add(element4);
-            set2.elements.Add(element6);
-            //veri aktarma bitis
-
-            if (sets.Kumeler.Count == 0)//gunceleme olayi yok sadece vei yoksa kumelerde veri ekler varsa ve eksikse olayini ekle
-            {
-                sets.Kumeler.Add(set);
-                sets.Kumeler.Add(set2);
-            }
+            LoadEt();
 
 
             checkBoxYenile();
@@ -237,10 +178,11 @@ namespace Categorizer
         private void checkBoxYenile()
         {
             checkedListBoxSets.Items.Clear();
-
+            
             foreach (Set s in sets.Kumeler)
             {
-                checkedListBoxSets.Items.Add(s.SetName);
+                if (s.SetName!=null)
+                    checkedListBoxSets.Items.Add(s.SetName);
             }
         }
         List<string> KatitEdici()
@@ -249,7 +191,9 @@ namespace Categorizer
             List<string> sonuc = new List<string>();
            foreach(Set set in sets.Kumeler)
             {
+                set.elements = new List<Element>();
                 sonuc.Add(set.SetName);
+                
                 foreach(Element element in set.elements)
                 {
                     charA = new char[element.Name.Length];
@@ -273,11 +217,12 @@ namespace Categorizer
             foreach(string s in liste)
             {
                 tempSet = new Set();
+                tempSet.elements = new List<Element>();
                 charA = new char[s.Length];
                 charA = s.ToCharArray();
-                if (charA[0]== '•'&&charA[1]==' ')
+                if (charA[0]== '•')
                 {
-                    tempSet.elements = new List<Element>();
+                    
                     element = new Element();
                     
                     element.Name= charA.ToString();
