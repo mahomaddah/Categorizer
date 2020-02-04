@@ -28,6 +28,8 @@ namespace Categorizer
         {
             this.Hide();
             new Home().ShowDialog();
+           
+           
         }
     }
 }
