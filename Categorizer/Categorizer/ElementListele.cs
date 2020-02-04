@@ -12,9 +12,60 @@ namespace Categorizer
 {
     public partial class ElementListele : Form
     {
+        SingleTone sets = SingleTone.Instance();
         public ElementListele()
         {
             InitializeComponent();
+            checkBoxYenile();
+        }
+        private void checkBoxYenile()
+        {
+            checkedListBoxElements.Items.Clear();
+            foreach (Element element in sets.TasiyiciNesne.elements)
+            {
+                checkedListBoxElements.Items.Add(element.Name);
+            }
+            KumeIsmilbl.Text = "Seçili küme : " + sets.TasiyiciNesne.SetName + " :";
+        }
+        private void GeriDon_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Home().ShowDialog();
+        }
+
+        private void DelBtn_Click(object sender, EventArgs e)
+        {
+            if (checkedListBoxElements.CheckedItems.Count == 0)
+            {
+                MessageBox.Show("lütfen önce silmek istediklerinizi seçiniz....");
+            }
+            else
+            {
+                foreach(string name in checkedListBoxElements.CheckedItems)             
+                sets.TasiyiciNesne.elements.RemoveAll(x => x.Name == name);
+                  
+                sets.Kumeler.RemoveAll(x => x.SetName == sets.TasiyiciNesne.SetName);
+                sets.Kumeler.Add(sets.TasiyiciNesne);
+                checkBoxYenile();
+            }
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            if(ElemanIsimTexbox.Text== "Eleman ismi giriniz....")
+            {
+                Hata.HataGoster(4);
+            }
+            else
+            {
+                Element element = new Element();
+                element.Name = ElemanIsimTexbox.Text ;
+
+                sets.TasiyiciNesne.elements.Add(element);
+                sets.Kumeler.RemoveAll(x => x.SetName == sets.TasiyiciNesne.SetName);
+                sets.Kumeler.Add(sets.TasiyiciNesne);
+                checkBoxYenile();
+            }
         }
     }
 }

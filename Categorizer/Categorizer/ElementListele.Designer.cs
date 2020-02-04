@@ -40,18 +40,19 @@
             // 
             // DelBtn
             // 
-            this.DelBtn.BackColor = System.Drawing.SystemColors.Info;
+            this.DelBtn.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.DelBtn.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold);
             this.DelBtn.Location = new System.Drawing.Point(39, 605);
             this.DelBtn.Name = "DelBtn";
-            this.DelBtn.Size = new System.Drawing.Size(182, 23);
+            this.DelBtn.Size = new System.Drawing.Size(186, 23);
             this.DelBtn.TabIndex = 37;
             this.DelBtn.Text = "Eleman Sil";
             this.DelBtn.UseVisualStyleBackColor = false;
+            this.DelBtn.Click += new System.EventHandler(this.DelBtn_Click);
             // 
             // addBtn
             // 
-            this.addBtn.BackColor = System.Drawing.SystemColors.Info;
+            this.addBtn.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.addBtn.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold);
             this.addBtn.Location = new System.Drawing.Point(231, 89);
             this.addBtn.Name = "addBtn";
@@ -59,10 +60,11 @@
             this.addBtn.TabIndex = 36;
             this.addBtn.Text = "Eleman Ekle";
             this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // isimDegisBtn
             // 
-            this.isimDegisBtn.BackColor = System.Drawing.SystemColors.Info;
+            this.isimDegisBtn.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.isimDegisBtn.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold);
             this.isimDegisBtn.Location = new System.Drawing.Point(231, 152);
             this.isimDegisBtn.Name = "isimDegisBtn";
@@ -77,7 +79,7 @@
             this.KumeIsmilbl.BackColor = System.Drawing.Color.DarkRed;
             this.KumeIsmilbl.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold);
             this.KumeIsmilbl.ForeColor = System.Drawing.Color.HotPink;
-            this.KumeIsmilbl.Location = new System.Drawing.Point(368, 35);
+            this.KumeIsmilbl.Location = new System.Drawing.Point(392, 36);
             this.KumeIsmilbl.Name = "KumeIsmilbl";
             this.KumeIsmilbl.Size = new System.Drawing.Size(93, 34);
             this.KumeIsmilbl.TabIndex = 34;
@@ -85,14 +87,16 @@
             // 
             // GeriDon
             // 
-            this.GeriDon.BackColor = System.Drawing.SystemColors.Info;
+            this.GeriDon.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.GeriDon.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold);
+            this.GeriDon.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.GeriDon.Location = new System.Drawing.Point(39, 656);
             this.GeriDon.Name = "GeriDon";
-            this.GeriDon.Size = new System.Drawing.Size(182, 23);
+            this.GeriDon.Size = new System.Drawing.Size(186, 23);
             this.GeriDon.TabIndex = 33;
             this.GeriDon.Text = "Geri Dön....";
             this.GeriDon.UseVisualStyleBackColor = false;
+            this.GeriDon.Click += new System.EventHandler(this.GeriDon_Click);
             // 
             // checkedListBoxElements
             // 
@@ -106,7 +110,7 @@
             "Kronik öksürük nedenleri",
             "Nonprodüktif öksürük nedenleri",
             "Prodüktif öksürük nedenleri"});
-            this.checkedListBoxElements.Location = new System.Drawing.Point(374, 92);
+            this.checkedListBoxElements.Location = new System.Drawing.Point(398, 92);
             this.checkedListBoxElements.Name = "checkedListBoxElements";
             this.checkedListBoxElements.Size = new System.Drawing.Size(1058, 596);
             this.checkedListBoxElements.TabIndex = 32;

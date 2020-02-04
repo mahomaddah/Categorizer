@@ -103,7 +103,7 @@ namespace Categorizer
         {           
                                  
             this.Hide();
-          //  new ElemanListele().ShowDialog();
+            new ElementListele().ShowDialog();
         }
         private short checkedSayisi()
         {
@@ -119,8 +119,10 @@ namespace Categorizer
             if (checkedSayisi() != 1) { Hata.HataGoster(1); }
             else
             {
+                foreach(string s in checkedListBoxSets.CheckedItems)                                  
+                sets.TasiyiciNesne = sets.Kumeler.Find(x => x.SetName == s);
                 this.Hide();
-               // new ElemanListele().ShowDialog();
+                new ElementListele().ShowDialog();
 
 
 
@@ -132,11 +134,9 @@ namespace Categorizer
             if (checkedSayisi() < 1) { Hata.HataGoster(2); }
             else
             {
-                
-                    
-
-
-
+                foreach (string s in checkedListBoxSets.CheckedItems)
+                sets.Kumeler.RemoveAll(x => x.SetName == s);
+                checkBoxYenile();
             }
         }
         private void veriAktar()
@@ -218,14 +218,19 @@ namespace Categorizer
             }
 
 
-
-            checkedListBoxSets.Items.Clear();
+            checkBoxYenile();
+                    
             
+        }
+
+        private void checkBoxYenile()
+        {
+            checkedListBoxSets.Items.Clear();
+
             foreach (Set s in sets.Kumeler)
             {
-               checkedListBoxSets.Items.Add(s.SetName);
-            }          
-            
+                checkedListBoxSets.Items.Add(s.SetName);
+            }
         }
     }
 }

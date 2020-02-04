@@ -47,7 +47,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Info;
+            this.button1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.button1.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold);
             this.button1.Location = new System.Drawing.Point(42, 660);
             this.button1.Name = "button1";
