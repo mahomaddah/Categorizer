@@ -12,6 +12,7 @@ namespace Categorizer
 {
     public partial class ElementListele : Form
     {
+        
         SingleTone sets = SingleTone.Instance();
         public ElementListele()
         {
@@ -42,8 +43,16 @@ namespace Categorizer
         }
         private void GeriDon_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Home().ShowDialog();
+            if (sets.TasiyiciNesne.SetName==""&& checkedListBoxElements.Items.Count!=0 )
+            {
+                Hata.HataGoster(3);
+            }
+             else
+            {
+                this.Hide();
+                new Home().ShowDialog();
+            }
+           
         }
 
         private void DelBtn_Click(object sender, EventArgs e)
