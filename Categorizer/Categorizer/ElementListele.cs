@@ -16,25 +16,28 @@ namespace Categorizer
         public ElementListele()
         {
             InitializeComponent();
-            checkBoxYenile();
+            checkBoxYenile();          
         }
         private void checkBoxYenile()
         {
-            checkedListBoxElements.Items.Clear();
+            
             if (sets.add == false)
             {
+                checkedListBoxElements.Items.Clear();
                 foreach (Element element in sets.TasiyiciNesne.elements)
                 {
                     checkedListBoxElements.Items.Add(element.Name);
                 }
                 KumeIsmilbl.Text = "Seçili küme : " + sets.TasiyiciNesne.SetName + " :";
                 KumeisimTxtbx.Text = sets.TasiyiciNesne.SetName;
-                sets.add = true;
+                
             }
             else
             {
-                KumeIsmilbl.Text = "küme ismi giriniz : ";
+                checkedListBoxElements.Items.Clear();
+                KumeIsmilbl.Text = "küme ismi giriniz : ";  
                 KumeisimTxtbx.Text = "küme ismi giriniz ... ";
+                sets.add = false;
             }
         }
         private void GeriDon_Click(object sender, EventArgs e)

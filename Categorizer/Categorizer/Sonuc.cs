@@ -21,7 +21,8 @@ namespace Categorizer
             {
                 checkedListBoxSonuc.Items.Add(x.Name);
             }
-            labelSonuc.Text = sets.TasiyiciNesne.SetName;
+            labelSonuc.Text = sets.TasiyiciIsim;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

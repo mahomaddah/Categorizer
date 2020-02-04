@@ -58,7 +58,7 @@ namespace Categorizer
                 }
                 m = true;
             }
-            tempSet.SetName = sorguIsmi;
+            sets.TasiyiciIsim = sorguIsmi;
             sets.TasiyiciNesne = tempSet;
             
             
