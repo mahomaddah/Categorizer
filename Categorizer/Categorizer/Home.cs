@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Categorizer
 {
@@ -19,7 +20,7 @@ namespace Categorizer
         {
             InitializeComponent();
             veriAktar();
-
+            KayitEt();
         }
         private void sonucHesapla()
         {
@@ -242,5 +243,69 @@ namespace Categorizer
                 checkedListBoxSets.Items.Add(s.SetName);
             }
         }
+        List<string> KatitEdici()
+        {
+            char[] charA;
+            List<string> sonuc = new List<string>();
+           foreach(Set set in sets.Kumeler)
+            {
+                sonuc.Add(set.SetName);
+                foreach(Element element in set.elements)
+                {
+                    charA = new char[element.Name.Length];
+                    charA = element.Name.ToCharArray();
+                    if (charA[0] != '•' )
+                        sonuc.Add("• " + element.Name);
+                    else
+                    {
+                        sonuc.Add(element.Name);
+                    }
+                }
+            }
+                
+            return sonuc;
+        }
+        void KayitAlici(List<string> liste)
+        {
+            Set tempSet;
+            Element element;
+            char[] charA;
+            foreach(string s in liste)
+            {
+                tempSet = new Set();
+                charA = new char[s.Length];
+                charA = s.ToCharArray();
+                if (charA[0]== '•'&&charA[1]==' ')
+                {
+                    tempSet.elements = new List<Element>();
+                    element = new Element();
+                    
+                    element.Name= charA.ToString();
+                    tempSet.elements.Add(element);
+                    sets.Kumeler.Add(tempSet);
+                    
+                }
+                else
+                {
+                    tempSet.SetName = s;
+                    sets.Kumeler.Add(tempSet);
+                }
+                
+            }
+        }
+
+        string filePath = @"kumeler.txt"; //debug da kumeler.txt te
+
+        void LoadEt()
+        {
+            List<string> sik = new List<string>();
+            sik = File.ReadAllLines(filePath, Encoding.UTF8).ToList();
+            KayitAlici(sik);
+        }
+        void KayitEt()
+        {
+            File.WriteAllLines(filePath,KatitEdici());
+        }
+
     }
 }
