@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Element.cs" />
+    <Compile Include="ElementListele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ElementListele.Designer.cs">
+      <DependentUpon>ElementListele.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hata.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -64,6 +70,9 @@
     <Compile Include="Sonuc.Designer.cs">
       <DependentUpon>Sonuc.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ElementListele.resx">
+      <DependentUpon>ElementListele.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
