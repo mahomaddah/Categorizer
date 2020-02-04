@@ -103,9 +103,9 @@ namespace Categorizer
         {
             sets.add = true;
 
-           //sets.TasiyiciNesne = null;
-           // sets.TasiyiciNesne = new Set();
-           // sets.TasiyiciNesne.elements = new List<Element>();
+           sets.TasiyiciNesne = null;
+           sets.TasiyiciNesne = new Set();
+           sets.TasiyiciNesne.elements = new List<Element>();
             this.Hide();
             new ElementListele().ShowDialog();
         }
