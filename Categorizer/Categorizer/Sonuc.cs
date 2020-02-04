@@ -12,15 +12,22 @@ namespace Categorizer
 {
     public partial class Sonuc : Form
     {
+        SingleTone sets = SingleTone.Instance();
         public Sonuc()
         {
             InitializeComponent();
+            checkedListBoxSonuc.Items.Clear();
+            foreach(Element x in sets.TasiyiciNesne.elements)
+            {
+                checkedListBoxSonuc.Items.Add(x.Name);
+            }
+            labelSonuc.Text = sets.TasiyiciNesne.SetName;
         }
 
-        private void backbtn_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
-            new kumeler().ShowDialog();
+            this.Hide();
+            new Home().ShowDialog();
         }
     }
 }

@@ -28,55 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.kumeKomutLbl = new System.Windows.Forms.Label();
-            this.backbtn = new System.Windows.Forms.Button();
+            this.labelSonuc = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.checkedListBoxSonuc = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
-            // kumeKomutLbl
+            // labelSonuc
             // 
-            this.kumeKomutLbl.AutoSize = true;
-            this.kumeKomutLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.5F);
-            this.kumeKomutLbl.Location = new System.Drawing.Point(223, 22);
-            this.kumeKomutLbl.Name = "kumeKomutLbl";
-            this.kumeKomutLbl.Size = new System.Drawing.Size(120, 32);
-            this.kumeKomutLbl.TabIndex = 16;
-            this.kumeKomutLbl.Text = "AnBnC :";
+            this.labelSonuc.AutoSize = true;
+            this.labelSonuc.BackColor = System.Drawing.Color.SpringGreen;
+            this.labelSonuc.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold);
+            this.labelSonuc.ForeColor = System.Drawing.Color.Khaki;
+            this.labelSonuc.Location = new System.Drawing.Point(283, 47);
+            this.labelSonuc.Name = "labelSonuc";
+            this.labelSonuc.Size = new System.Drawing.Size(115, 34);
+            this.labelSonuc.TabIndex = 34;
+            this.labelSonuc.Text = "AnBnC ";
             // 
-            // backbtn
+            // button1
             // 
-            this.backbtn.Location = new System.Drawing.Point(24, 650);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(182, 23);
-            this.backbtn.TabIndex = 15;
-            this.backbtn.Text = "Geri Dön ...";
-            this.backbtn.UseVisualStyleBackColor = true;
-            this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
+            this.button1.BackColor = System.Drawing.SystemColors.Info;
+            this.button1.Font = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(42, 660);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(182, 23);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Geri Dön...";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkedListBoxSonuc
             // 
+            this.checkedListBoxSonuc.BackColor = System.Drawing.Color.DarkGray;
             this.checkedListBoxSonuc.Font = new System.Drawing.Font("Microsoft Tai Le", 20.5F);
+            this.checkedListBoxSonuc.ForeColor = System.Drawing.SystemColors.Desktop;
             this.checkedListBoxSonuc.FormattingEnabled = true;
             this.checkedListBoxSonuc.Items.AddRange(new object[] {
-            "Pnömoni",
-            "Akciğer absesi",
-            "Bronşektazi",
-            "Kronik bronşit",
-            "Tüberküloz",
-            "Bronkojenik karsinom",
-            "Kistik fibrozis"});
-            this.checkedListBoxSonuc.Location = new System.Drawing.Point(226, 77);
+            "Akut öksürük nedenleri",
+            "kut öksürük nedenleri",
+            "Kronik öksürük nedenleri",
+            "Nonprodüktif öksürük nedenleri",
+            "Prodüktif öksürük nedenleri"});
+            this.checkedListBoxSonuc.Location = new System.Drawing.Point(286, 87);
             this.checkedListBoxSonuc.Name = "checkedListBoxSonuc";
             this.checkedListBoxSonuc.Size = new System.Drawing.Size(1082, 596);
-            this.checkedListBoxSonuc.TabIndex = 14;
+            this.checkedListBoxSonuc.TabIndex = 32;
             // 
             // Sonuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1400, 722);
-            this.Controls.Add(this.kumeKomutLbl);
-            this.Controls.Add(this.backbtn);
+            this.BackgroundImage = global::Categorizer.Properties.Resources._1;
+            this.ClientSize = new System.Drawing.Size(1410, 731);
+            this.Controls.Add(this.labelSonuc);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.checkedListBoxSonuc);
             this.Name = "Sonuc";
             this.Text = "Sonuc";
@@ -86,9 +91,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label kumeKomutLbl;
-        private System.Windows.Forms.Button backbtn;
+        private System.Windows.Forms.Label labelSonuc;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckedListBox checkedListBoxSonuc;
     }
 }

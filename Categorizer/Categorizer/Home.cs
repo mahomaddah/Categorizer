@@ -89,7 +89,7 @@ namespace Categorizer
         {           
                                  
             this.Hide();
-            new ElemanListele().ShowDialog();
+          //  new ElemanListele().ShowDialog();
         }
         private short checkedSayisi()
         {
@@ -106,7 +106,7 @@ namespace Categorizer
             else
             {
                 this.Hide();
-                new ElemanListele().ShowDialog();
+               // new ElemanListele().ShowDialog();
 
 
 
