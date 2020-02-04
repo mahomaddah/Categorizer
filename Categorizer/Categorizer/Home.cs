@@ -100,8 +100,12 @@ namespace Categorizer
         }
 
         private void addBtn_Click(object sender, EventArgs e)
-        {           
-                                 
+        {
+            sets.add = true;
+
+           //sets.TasiyiciNesne = null;
+           // sets.TasiyiciNesne = new Set();
+           // sets.TasiyiciNesne.elements = new List<Element>();
             this.Hide();
             new ElementListele().ShowDialog();
         }
@@ -119,6 +123,7 @@ namespace Categorizer
             if (checkedSayisi() != 1) { Hata.HataGoster(1); }
             else
             {
+                sets.add = false;
                 foreach(string s in checkedListBoxSets.CheckedItems)                                  
                 sets.TasiyiciNesne = sets.Kumeler.Find(x => x.SetName == s);
                 this.Hide();

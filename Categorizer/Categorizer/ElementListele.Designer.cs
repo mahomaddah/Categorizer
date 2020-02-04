@@ -72,6 +72,7 @@
             this.isimDegisBtn.TabIndex = 35;
             this.isimDegisBtn.Text = "Küme İsmini Değiştir";
             this.isimDegisBtn.UseVisualStyleBackColor = false;
+            this.isimDegisBtn.Click += new System.EventHandler(this.isimDegisBtn_Click);
             // 
             // KumeIsmilbl
             // 

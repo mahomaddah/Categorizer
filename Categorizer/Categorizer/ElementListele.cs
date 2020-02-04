@@ -21,11 +21,21 @@ namespace Categorizer
         private void checkBoxYenile()
         {
             checkedListBoxElements.Items.Clear();
-            foreach (Element element in sets.TasiyiciNesne.elements)
+            if (sets.add == false)
             {
-                checkedListBoxElements.Items.Add(element.Name);
+                foreach (Element element in sets.TasiyiciNesne.elements)
+                {
+                    checkedListBoxElements.Items.Add(element.Name);
+                }
+                KumeIsmilbl.Text = "Seçili küme : " + sets.TasiyiciNesne.SetName + " :";
+                KumeisimTxtbx.Text = sets.TasiyiciNesne.SetName;
+                sets.add = true;
             }
-            KumeIsmilbl.Text = "Seçili küme : " + sets.TasiyiciNesne.SetName + " :";
+            else
+            {
+                KumeIsmilbl.Text = "küme ismi giriniz : ";
+                KumeisimTxtbx.Text = "küme ismi giriniz ... ";
+            }
         }
         private void GeriDon_Click(object sender, EventArgs e)
         {
@@ -65,6 +75,21 @@ namespace Categorizer
                 sets.Kumeler.RemoveAll(x => x.SetName == sets.TasiyiciNesne.SetName);
                 sets.Kumeler.Add(sets.TasiyiciNesne);
                 checkBoxYenile();
+            }
+        }
+
+        private void isimDegisBtn_Click(object sender, EventArgs e)
+        {
+            if (KumeisimTxtbx.Text == sets.TasiyiciNesne.SetName|| KumeisimTxtbx.Text== "küme ismi giriniz ... ")
+            {
+                Hata.HataGoster(3);
+            }
+            else
+            {
+                sets.TasiyiciNesne.SetName = KumeisimTxtbx.Text;
+                sets.Kumeler.RemoveAll(x=>x.SetName==sets.TasiyiciNesne.SetName);
+                sets.Kumeler.Add(sets.TasiyiciNesne);
+                KumeIsmilbl.Text = "Seçili küme : " + sets.TasiyiciNesne.SetName + " :";
             }
         }
     }

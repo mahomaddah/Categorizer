@@ -10,6 +10,7 @@ namespace Categorizer
     {
         public List<Set> Kumeler { get; set; }
         public Set TasiyiciNesne { get; set; }
+        public bool add { get; set; }
         private static SingleTone instance;
 
          public static SingleTone Instance()
