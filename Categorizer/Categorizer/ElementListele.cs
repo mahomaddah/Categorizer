@@ -17,7 +17,16 @@ namespace Categorizer
         public ElementListele()
         {
             InitializeComponent();
-            checkBoxYenile();          
+            checkBoxYenile();
+            
+            foreach (Set x in sets.Kumeler) {
+                foreach (Element y in x.elements) { ElemanIsimTexbox.AutoCompleteCustomSource.Add(y.Name); }
+            }
+            foreach (Set x in sets.Kumeler)
+            {
+                 KumeisimTxtbx.AutoCompleteCustomSource.Add(x.SetName); 
+            }
+            
         }
         private void checkBoxYenile()
         {
@@ -43,7 +52,7 @@ namespace Categorizer
         }
         private void GeriDon_Click(object sender, EventArgs e)
         {
-            if (sets.TasiyiciNesne.SetName==""&& checkedListBoxElements.Items.Count!=0 )
+            if ((sets.TasiyiciNesne.SetName==""||sets.TasiyiciNesne.SetName==null)&& checkedListBoxElements.Items.Count!=0 )
             {
                 Hata.HataGoster(3);
             }

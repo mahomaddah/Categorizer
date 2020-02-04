@@ -118,6 +118,8 @@
             // 
             // ElemanIsimTexbox
             // 
+            this.ElemanIsimTexbox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.ElemanIsimTexbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.ElemanIsimTexbox.Location = new System.Drawing.Point(39, 92);
             this.ElemanIsimTexbox.Name = "ElemanIsimTexbox";
             this.ElemanIsimTexbox.Size = new System.Drawing.Size(186, 20);
@@ -126,6 +128,8 @@
             // 
             // KumeisimTxtbx
             // 
+            this.KumeisimTxtbx.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.KumeisimTxtbx.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.KumeisimTxtbx.Location = new System.Drawing.Point(39, 152);
             this.KumeisimTxtbx.Name = "KumeisimTxtbx";
             this.KumeisimTxtbx.Size = new System.Drawing.Size(186, 20);

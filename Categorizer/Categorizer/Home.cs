@@ -19,6 +19,7 @@ namespace Categorizer
         {
             InitializeComponent();
             veriAktar();
+
         }
         private void sonucHesapla()
         {
@@ -69,6 +70,9 @@ namespace Categorizer
             tempSeti.elements = new List<Element>();
             Element[] bira = new Element[bir.elements.Count];
             Element[] ikia = new Element[iki.elements.Count];
+            if(bir.elements.Count==0||iki.elements.Count==0)
+            { MessageBox.Show("Lütfen yeterli elemana sahip kümeler seçiniz..."); }
+            else { 
             bira = bir.elements.ToArray();
             ikia = iki.elements.ToArray();
 
@@ -84,8 +88,9 @@ namespace Categorizer
                 }
                 
             }
-
+            }
             return tempSeti;
+            
         }
         private void Sonuc_Click(object sender, EventArgs e)
         {
