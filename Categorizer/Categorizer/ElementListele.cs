@@ -91,7 +91,7 @@ namespace Categorizer
             {
                 Element element = new Element();
                 element.Name = ElemanIsimTexbox.Text ;
-
+               
                 sets.TasiyiciNesne.elements.Add(element);
                 sets.Kumeler.RemoveAll(x => x.SetName == sets.TasiyiciNesne.SetName);
                 sets.Kumeler.Add(sets.TasiyiciNesne);

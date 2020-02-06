@@ -148,6 +148,7 @@ namespace Categorizer
                 foreach (string s in checkedListBoxSets.CheckedItems)
                 sets.Kumeler.RemoveAll(x => x.SetName == s);
                 checkBoxYenile();
+                KayitEt();
             }
         }
         private void veriAktar()
