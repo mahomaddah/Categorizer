@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Categorizer", "Categorizer\Categorizer.csproj", "{48EF4FBA-DE4E-4710-884B-27C22B2AFAF6}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupCategorizer", "SetupCategorizer\SetupCategorizer.vdproj", "{5919F033-4F2A-4C76-A9EE-D772662490B6}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{9A97F9CD-E011-4D16-B8FC-604D76084B67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{48EF4FBA-DE4E-4710-884B-27C22B2AFAF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48EF4FBA-DE4E-4710-884B-27C22B2AFAF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48EF4FBA-DE4E-4710-884B-27C22B2AFAF6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5919F033-4F2A-4C76-A9EE-D772662490B6}.Debug|Any CPU.ActiveCfg = Debug
-		{5919F033-4F2A-4C76-A9EE-D772662490B6}.Release|Any CPU.ActiveCfg = Release
+		{9A97F9CD-E011-4D16-B8FC-604D76084B67}.Debug|Any CPU.ActiveCfg = Debug
+		{9A97F9CD-E011-4D16-B8FC-604D76084B67}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
