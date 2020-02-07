@@ -6,4 +6,4 @@ ScreenShots:
 ![](fotos/2.png)
 ![](fotos/3.png)
 ![](fotos/4.png)
-![](fotos/6.gif)
+
