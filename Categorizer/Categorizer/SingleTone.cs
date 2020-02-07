@@ -8,6 +8,7 @@ namespace Categorizer
 {
     class SingleTone
     {
+        public bool LoadEdildi { get; set; }
         public List<Set> Kumeler { get; set; }
         public Set TasiyiciNesne { get; set; }
         public bool add { get; set;}
@@ -19,7 +20,7 @@ namespace Categorizer
             if (instance == null)
             {
                 instance = new SingleTone();
-
+               
             }
             return instance;
         }

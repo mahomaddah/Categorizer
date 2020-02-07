@@ -20,6 +20,12 @@ namespace Categorizer
         {
             InitializeComponent();
             veriAktar();
+            if (sets.LoadEdildi == false)
+            {                             
+                sets.LoadEdildi = true;
+                LoadEt();
+                checkBoxYenile();
+            }           
             KayitEt();
         }
         private void sonucHesapla()
@@ -159,10 +165,10 @@ namespace Categorizer
                 sets.TasiyiciNesne = new Set();
             if (sets.TasiyiciNesne.elements == null)
                 sets.TasiyiciNesne.elements = new List<Element>();
-
+            
             Set set = new Set();
             Set set2 = new Set();
-
+            
             set.elements = new List<Element>();
             set2.elements = new List<Element>();
 
@@ -223,11 +229,11 @@ namespace Categorizer
             set2.elements.Add(element6);
             //veri aktarma bitis
 
-            if (sets.Kumeler.Count == 0)//gunceleme olayi yok sadece vei yoksa kumelerde veri ekler varsa ve eksikse olayini ekle
-            {
-                sets.Kumeler.Add(set);
-                sets.Kumeler.Add(set2);
-            }
+            //if (sets.Kumeler.Count == 0)//gunceleme olayi yok sadece veri yoksa kumelerde veri ekler varsa ve eksikse olayini ekle
+            //{
+            //    sets.Kumeler.Add(set);
+            //    sets.Kumeler.Add(set2);
+            //}
 
 
             checkBoxYenile();
@@ -238,11 +244,12 @@ namespace Categorizer
         private void checkBoxYenile()
         {
             checkedListBoxSets.Items.Clear();
-
+                       
             foreach (Set s in sets.Kumeler)
             {
                 checkedListBoxSets.Items.Add(s.SetName);
             }
+            
         }
         List<string> KatitEdici()
         {
@@ -267,31 +274,36 @@ namespace Categorizer
             return sonuc;
         }
         void KayitAlici(List<string> liste)
-        {
-            Set tempSet;
+        {      
             Element element;
             char[] charA;
-            foreach(string s in liste)
+            Set tempSet;
+            string EnSonEklenenKumeIsmi="";
+       
+            foreach (string s in liste)
             {
-                tempSet = new Set();
+              
                 charA = new char[s.Length];
                 charA = s.ToCharArray();
-                if (charA[0]== '•'&&charA[1]==' ')
-                {
-                    tempSet.elements = new List<Element>();
-                    element = new Element();
-                    
-                    element.Name= charA.ToString();
-                    tempSet.elements.Add(element);
-                    sets.Kumeler.Add(tempSet);
-                    
+                if (0 < s.Length)
+                { 
+                     if (charA[0] != '•')
+                    {
+                        tempSet = new Set();
+                        tempSet.elements = new List<Element>();
+                        tempSet.SetName = s;
+                        sets.Kumeler.Add(tempSet);
+                        EnSonEklenenKumeIsmi = s;
+                    }
+                    else if (charA[0]== '•')
+                    {
+                        element = new Element();
+                        element.Name = s;                                                                            
+                        sets.Kumeler.Find(x => x.SetName == EnSonEklenenKumeIsmi).elements.Add(element);
+                    }
+
                 }
-                else
-                {
-                    tempSet.SetName = s;
-                    sets.Kumeler.Add(tempSet);
-                }
-                
+
             }
         }
 
@@ -299,12 +311,14 @@ namespace Categorizer
 
         void LoadEt()
         {
-            List<string> sik = new List<string>();
+            List<string> sik = null;
+             sik = new List<string>();
             sik = File.ReadAllLines(filePath, Encoding.UTF8).ToList();
             KayitAlici(sik);
         }
         void KayitEt()
         {
+            
             File.WriteAllLines(filePath,KatitEdici());
         }
 
