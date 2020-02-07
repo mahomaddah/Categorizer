@@ -4,9 +4,9 @@ if you want to install
 download setup.rar uzip .. next next next.. 
 you can also add kayit.txt from setup.rar to installation directory for example data
 ScreenShots:
-![](5.png)
-![](2.png)
-![](3.png)
-![](4.png)
-![](1.png)
+![](fotos/5.png)
+![](fotos/2.png)
+![](fotos/3.png)
+![](fotos/4.png)
+![](fotos/1.png)
 
